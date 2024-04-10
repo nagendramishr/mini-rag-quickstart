@@ -51,12 +51,33 @@ B -- 6. Update Chat --> A
 #### Teams channel
 
 Teams will be used as the chat UI for this project.  To keep things simple, create a new team.  We'll use the general channel in this newly created team.
+
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/3805c120-82af-48da-83aa-500f68f50dec)
 
-
 #### Logic App
+
+The logic app will be used to shuttle message between the chat and Azure functions.  Create a new Logic in the azure portal.
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/6f5c2315-812f-417a-b1b2-3d82973125ab)
+
 #### Azure Function
+
+The function app will be used to call the OpenAI service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fd2c9000-aff1-434b-835c-a3f836e272e2)
+
 #### OpenAI 
 
 ## Hooking it up
 
+Overall implementing a Retrieval-Augmented Generation (RAG) model involves several steps:
+
+- **Define Use Case:** Start by defining the specific use case for your RAG implementation. Determine the domain or topic for which you want the Large Language Model (LLM) to generate responses augmented by retrieved information.
+- **Select an LLM:** Choose a suitable Large Language Model for your RAG implementation.
+- **Data Collection:** Collect a set of documents, also known as a corpus, that the model will use to retrieve information.
+- **Data Preprocessing:** Transform and enrich the data to make it suitable for model augmentation.
+   **Embedding:** Use an embedding model to convert the source data into a series of vectors that represent the words in the client data.
+- **Vector Database:** Store the generated embeddings in a vector database.
+- **User Query:** Receive a user input and perform a similarity measure between the collection of documents and the user input.
+- **Post-Processing:** Post-process the user input and the fetched document(s). The post-processing is done with an LLM.
+- **Response Generation:** Generate a response based on the user’s query and the retrieved documents.
