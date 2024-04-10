@@ -46,6 +46,8 @@ B -- 6. Update Chat --> A
 | 5| Azure Function | The function optionally interacts further with OpenAI but ultimately returns the response to teams  |
 |6 | Logic App | The Logic App updates the conversation with the response from OpenAI |
 
+-------------------
+
 ## Building it manually
 ### Create the resources:
 #### 1. Create a new Teams channel
@@ -79,6 +81,8 @@ You will receive an email that you have been granted access.  Once you have that
 #### 5. Create a new CosmosDB instance
 
 We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it's actually Azure functions that makes it easy to read from comsosDB. [And a storage acct, and event hub, and a queue, etc...] )
+
+---------------------
 
 ## Hooking it up
 
