@@ -26,7 +26,7 @@ To overcome the training problem customers can implement the RAG model and overc
 
 ```mermaid
 graph LR
-A[Square Rect] -- Link text --> B((Circle))
+Teams[Square Rect] -- Link text --> B((Circle))
 A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
