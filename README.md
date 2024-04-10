@@ -64,7 +64,7 @@ The logic app will be used to shuttle message between the chat and Azure functio
 
 #### 3. Create a new Azure Function
 
-The function app will be used to call the OpenAI service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.
+The function app will be used to call the OpenAI service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  If you have a different version of python installed locally, choose the version that matches your local system.
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fd2c9000-aff1-434b-835c-a3f836e272e2)
 
@@ -115,7 +115,7 @@ git clone https://github.com/nagendramishr/mini-rag-quickstart.git
 Edit the first three lines of bin/setup.sh as shown below with the correct values for your resource group, 
 
 ```
->**head -5 bin/setup.sh**
+>head -5 bin/setup.sh
 #!/bin/sh
 
 export RG=aoai-rag 
@@ -123,7 +123,7 @@ export COSMOS_ACCT=nvmopenaicosmosdb
 export COSMOS_DB=aoaidb
 ```
 
-# modify any facts from data/cosmosdb-facts.txt
+# Modify any facts from data/cosmosdb-facts.txt
 
 The facts in this file were generated via the prompt generator as a test for this exercise.  You can modify these for your own purpose.
 
@@ -131,13 +131,17 @@ The facts in this file were generated via the prompt generator as a test for thi
 
 # Create a new CosmosDB container
 ```
-. bin/setup.sh
-. bin/createDB.sh
-. bin/insertCosmos.py
+chmod ugo+x bin/*
+
+bin/setup.sh
+bin/createDB.sh
+bin/insertCosmos.py
 
 ```
 
 You should now have a cosmosDB with a noSQL db in it containing the facts from the facts file.
 
-# Add some sample records to the DB
+# Upload the sampel azure functions code to your instance.
+
+An azyure function has already been created for you
 
