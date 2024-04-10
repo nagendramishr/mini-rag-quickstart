@@ -13,14 +13,14 @@ In general, LLM's are costly to train and customize because training requires ve
 
 To overcome the training problem customers can implement the RAG model and overcome many of the problems: 
 
-- Access to External Knowledge: RAG provides LLMs access to external knowledge through documents, resulting in contextually accurate and factual responses.
-- Cost-Effective: RAG is more cost-effective than fine-tuning, as it doesn’t require the labeled data and computational resources that come with model training.
-- Improves Accuracy: RAG improves the accuracy and contextuality of LLM-generated responses while minimizing factual inaccuracies.
-- Up-to-Date Information: RAG ensures that the model has access to the most current, reliable facts.
-- Transparency: Users have access to the model’s sources, ensuring that its claims can be checked for accuracy and ultimately trusted.
-- Control Over Generated Text: Organizations have greater control over the generated text output.
-- Reduces Data Leakage: By grounding an LLM on a set of external, verifiable facts, the model has fewer opportunities to pull information baked into its parameters. This reduces the chances that an LLM will leak sensitive data.
-- Reduces Need for Continuous Training: RAG reduces the need for users to continuously train the model on new data and update its parameters as circumstances evolve4.
+- **Access to External Knowledge:** RAG provides LLMs access to external knowledge through documents, resulting in contextually accurate and factual responses.
+- **Cost-Effective:** RAG is more cost-effective than fine-tuning, as it doesn’t require the labeled data and computational resources that come with model training.
+- **Improves Accuracy:** RAG improves the accuracy and contextuality of LLM-generated responses while minimizing factual inaccuracies.
+- **Up-to-Date Information:** RAG ensures that the model has access to the most current, reliable facts.
+- **Transparency:** Users have access to the model’s sources, ensuring that its claims can be checked for accuracy and ultimately trusted.
+- **Control Over Generated Text:** Organizations have greater control over the generated text output.
+- **Reduces Data Leakage:** By grounding an LLM on a set of external, verifiable facts, the model has fewer opportunities to pull information baked into its parameters. This reduces the chances that an LLM will leak sensitive data.
+- **Reduces Need for Continuous Training:** RAG reduces the need for users to continuously train the model on new data and update its parameters as circumstances evolve4.
 
 # Project Overview
 
