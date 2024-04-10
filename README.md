@@ -1,7 +1,26 @@
 # Mini-Rag-Quickstart!
 
-The goal of this project is to help you start quickly with building a RAG project.  If you want to learn more about RAG, you can check here:  Welcome to the Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+## Background
 
+The goal of this project is to help you get up an running quickly with a build out of a RAG model. Before you dive in, if you're interested in learning more about the RAG model, you can read some of the documentation here:
+
+- Hugging Face’s RAG documentation provides a detailed explanation of the RAG model and its implementation.
+- IBM’s AI RAG page provides a conceptual architecture of a RAG solution, showing the major components and the flow of interactions between them to respond to a user query.
+- A Simple Guide To Retrieval Augmented Generation Language Models includes a diagram showing the generator flow in a RAG-based system.
+- Retrieval augmented generation (RAG) explained provides a simple diagram that shows the process of RAG at the intersection of natural language generation (NLG) and information retrieval (IR).
+
+In general, LLM's are costly to train and customize because training requires very large GPU clusters running for extended periods of time. You can follow this in-dept discussion here:  https://arxiv.org/pdf/2104.04473.pdf. The problem is made more complicated if the data is constantly changing.
+
+To overcome the training problem customers can implement the RAG model and overcome many of the problems: 
+
+- Access to External Knowledge: RAG provides LLMs access to external knowledge through documents, resulting in contextually accurate and factual responses.
+- Cost-Effective: RAG is more cost-effective than fine-tuning, as it doesn’t require the labeled data and computational resources that come with model training.
+- Improves Accuracy: RAG improves the accuracy and contextuality of LLM-generated responses while minimizing factual inaccuracies.
+- Up-to-Date Information: RAG ensures that the model has access to the most current, reliable facts.
+- Transparency: Users have access to the model’s sources, ensuring that its claims can be checked for accuracy and ultimately trusted.
+- Control Over Generated Text: Organizations have greater control over the generated text output.
+- Reduces Data Leakage: By grounding an LLM on a set of external, verifiable facts, the model has fewer opportunities to pull information baked into its parameters. This reduces the chances that an LLM will leak sensitive data.
+- Reduces Need for Continuous Training: RAG reduces the need for users to continuously train the model on new data and update its parameters as circumstances evolve4.
 
 # Project Overview
 
