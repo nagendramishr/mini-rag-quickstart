@@ -26,10 +26,10 @@ To overcome the training problem customers can implement the RAG model and overc
 
 ```mermaid
 graph LR
-Teams[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
+A[Teams] -- Chat --> B{Logic Apps}
+B --> C(Azure Function)
+C((CosmosDB)) --> C
+C --> D(OpenAI)
 ```
 
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
