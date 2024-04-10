@@ -78,6 +78,17 @@ You will receive an email that you have been granted access.  Once you have that
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/d03ef280-afa1-485e-9833-13f60ada2578)
 
+##### Create a LLM deployment 
+
+In the portal navigate to the deployed instance and select "Model deployments" on the left:
+
+<img width="97" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/f6dc7d7d-6a5b-4c28-9562-9abff246c736">
+
+This will ask you to confirm that you're navigating to Azure OpenAI Studio.  Confirm and create a new deployment:
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/58cc84a8-8fb4-490a-930b-5ceef29d1576)
+
+Make a note of your deployment name.  In this case, its called **gpt35**
 #### 5. Create a new CosmosDB instance
 
 We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it's actually Azure functions that makes it easy to read from comsosDB. [And a storage acct, and event hub, and a queue, etc...] )
