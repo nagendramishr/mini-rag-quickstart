@@ -34,12 +34,11 @@ C -- 5. Response --> B
 B -- 6. Update Chat --> A 
 ```
 
-|    | Component | Activity
-|
-|----|-----------|-----------
-| 1    | Teams     | User enters text in chat
-|
-| 2  |  Logic App | Logic app invokes Azure function 
+|    | Component | Activity |
+|----|-----------|----------|
+| 1    | Teams     | User enters text in chat|
+| 2  |  Logic App | Logic app invokes Azure function |
+
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
 
 ## Learning outcomes
