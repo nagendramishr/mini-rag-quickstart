@@ -28,7 +28,7 @@ To overcome the training problem customers can implement the RAG model and overc
 graph LR
 A[Teams] -- Chat --> B{Logic Apps}
 B --> C(Azure Function)
-C((CosmosDB)) --> C
+D((CosmosDB)) --> C
 C --> D(OpenAI)
 ```
 
