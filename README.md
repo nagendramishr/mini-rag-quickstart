@@ -14,14 +14,14 @@ In general, LLM's are costly to train and customize because training requires ve
 
 To overcome the training problem customers can implement the RAG model and overcome many of the problems: 
 
-- **Access to External Knowledge:** RAG provides LLMs access to external knowledge through documents, resulting in contextually accurate and factual responses.
-- **Cost-Effective:** RAG is more cost-effective than fine-tuning, as it doesn’t require the labeled data and computational resources that come with model training.
-- **Improves Accuracy:** RAG improves the accuracy and contextuality of LLM-generated responses while minimizing factual inaccuracies.
-- **Up-to-Date Information:** RAG ensures that the model has access to the most current, reliable facts.
-- **Transparency:** Users have access to the model’s sources, ensuring that its claims can be checked for accuracy and ultimately trusted.
-- **Control Over Generated Text:** Organizations have greater control over the generated text output.
-- **Reduces Data Leakage:** By grounding an LLM on a set of external, verifiable facts, the model has fewer opportunities to pull information baked into its parameters. This reduces the chances that an LLM will leak sensitive data.
-- **Reduces Need for Continuous Training:** RAG reduces the need for users to continuously train the model on new data and update its parameters as circumstances evolve4.
+> - **Access to External Knowledge:** RAG provides LLMs access to external knowledge through documents, resulting in contextually accurate and factual responses.
+> - **Cost-Effective:** RAG is more cost-effective than fine-tuning, as it doesn’t require the labeled data and computational resources that come with model training.
+> - **Improves Accuracy:** RAG improves the accuracy and contextuality of LLM-generated responses while minimizing factual inaccuracies.
+> - **Up-to-Date Information:** RAG ensures that the model has access to the most current, reliable facts.
+> - **Transparency:** Users have access to the model’s sources, ensuring that its claims can be checked for accuracy and ultimately trusted.
+> - **Control Over Generated Text:** Organizations have greater control over the generated text output.
+> - **Reduces Data Leakage:** By grounding an LLM on a set of external, verifiable facts, the model has fewer opportunities to pull information baked into its parameters. This reduces the chances that an LLM will leak sensitive data.
+> - **Reduces Need for Continuous Training:** RAG reduces the need for users to continuously train the model on new data and update its parameters as circumstances evolve4.
 
 # Project Overview
 
@@ -78,20 +78,22 @@ You will receive an email that you have been granted access.  Once you have that
 
 #### 5. CosmosDB
 
-We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it's actually Azure functions that makes it easy to read from comsosDB. )
+We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it's actually Azure functions that makes it easy to read from comsosDB. [And a storage acct, and event hub, and a queue, etc...] )
 
 ## Hooking it up
 
 Overall implementing a Retrieval-Augmented Generation (RAG) model involves several steps.  But it'll take longer to read through these than to do the actual mini-RAG implementation.
 
-- **Define Use Case:** Start by defining the specific use case for your RAG implementation. Determine the domain or topic for which you want the Large Language Model (LLM) to generate responses augmented by retrieved information.
-- **Select an LLM:** Choose a suitable Large Language Model for your RAG implementation.
-- **Data Collection:** Collect a set of documents, also known as a corpus, that the model will use to retrieve information.
-- **Data Preprocessing:** Transform and enrich the data to make it suitable for model augmentation.
-- **Embedding:** Use an embedding model to convert the source data into a series of vectors that represent the words in the client data.
-- **Vector Database:** Store the generated embeddings in a vector database.
-- **User Query:** Receive a user input and perform a similarity measure between the collection of documents and the user input.
-- **Post-Processing:** Post-process the user input and the fetched document(s). The post-processing is done with an LLM.
-- **Response Generation:** Generate a response based on the user’s query and the retrieved documents.
+> - **Define Use Case:** Start by defining the specific use case for your RAG implementation. Determine the domain or topic for which you want the Large Language Model (LLM) to generate responses augmented by retrieved information.
+> - **Select an LLM:** Choose a suitable Large Language Model for your RAG implementation.
+> - **Data Collection:** Collect a set of documents, also known as a corpus, that the model will use to retrieve information.
+> - **Data Preprocessing:** Transform and enrich the data to make it suitable for model augmentation.
+> - **Embedding:** Use an embedding model to convert the source data into a series of vectors that represent the words in the client data.
+> - **Vector Database:** Store the generated embeddings in a vector database.
+> - **User Query:** Receive a user input and perform a similarity measure between the collection of documents and the user input.
+> - **Post-Processing:** Post-process the user input and the fetched document(s). The post-processing is done with an LLM.
+> - **Response Generation:** Generate a response based on the user’s query and the retrieved documents.
 
 ### Here are the steps:
+
+
