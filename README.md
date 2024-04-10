@@ -109,9 +109,9 @@ Edit the first three lines below with the correct values for your resource group
 
 # Edit these values 
 ``
-export RG=aoai-rag
-export COSMOS_ACCT=nvmopenaicosmosdb
-export COSMOS_DB=aoaidb
+    export RG=aoai-rag
+    export COSMOS_ACCT=nvmopenaicosmosdb
+    export COSMOS_DB=aoaidb
 ``
 # Create a new CosmosDB container
 ``
