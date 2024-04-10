@@ -27,8 +27,10 @@ To overcome the training problem customers can implement the RAG model and overc
 ```mermaid
 graph LR
 A[Teams] -- Chat --> B{Logic Apps}
+subgraph Azure Functions
 B --> C(Azure Function)
 D[(CosmosDB)] --> C
+end
 C --> E(OpenAI)
 C -- Response --> B
 B -- Update Chat --> A 
