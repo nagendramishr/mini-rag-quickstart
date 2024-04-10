@@ -48,25 +48,25 @@ B -- 6. Update Chat --> A
 
 ## Building it manually
 ### Create the resources:
-#### 1. Teams channel
+#### 1. Create a new Teams channel
 
 Teams will be used as the chat UI for this project.  To keep things simple, create a new team.  We'll use the general channel in this newly created team.
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/3805c120-82af-48da-83aa-500f68f50dec)
 
-#### 2. Logic App
+#### 2. Create a new Logic App
 
 The logic app will be used to shuttle message between the chat and Azure functions.  Create a new Logic in the azure portal.
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/6f5c2315-812f-417a-b1b2-3d82973125ab)
 
-#### 3. Azure Function
+#### 3. Create a new Azure Function
 
 The function app will be used to call the OpenAI service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fd2c9000-aff1-434b-835c-a3f836e272e2)
 
-#### 4. OpenAI 
+#### 4. Creae a new OpenAI instance 
 
 Now for the LLM magic.  Here we'll create an openAI Instance from the portal.  Note, you will need to apply for access  ( and be accepted ) before you can instance this.  If you don't have access yet, click on [Apply for access](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
 
@@ -76,7 +76,7 @@ You will receive an email that you have been granted access.  Once you have that
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/d03ef280-afa1-485e-9833-13f60ada2578)
 
-#### 5. CosmosDB
+#### 5. Create a new CosmosDB instance
 
 We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it's actually Azure functions that makes it easy to read from comsosDB. [And a storage acct, and event hub, and a queue, etc...] )
 
