@@ -1,0 +1,48 @@
+“Data Guru” John, a level 200 expert and great coder, has 2 years of Azure Machine Learning experience at Microsoft.
+“Cloud Queen” Emily, a level 300 expert and excellent coder, has 3 years of Azure Functions experience at Amazon.
+“Storage Master” Robert, a level 200 expert known for his coding skills, has 5 years of Azure Storage experience at Google.
+“AI Architect” Sarah, a level 300 expert and great coder, has 4 years of Azure Cognitive Services experience at IBM.
+“DevOps King” Mike, a level 200 expert and excellent coder, has 3 years of Azure DevOps experience at Facebook.
+“Network Ninja” Lisa, a level 100 expert and great coder, has 2 years of Azure Networking experience at Cisco.
+“Security Shield” James, a level 300 expert and excellent coder, has 4 years of Azure Security Center experience at Symantec.
+“App Service Ace” Karen, a level 200 expert and great coder, has 3 years of Azure App Service experience at Salesforce.
+“Data Lake Diver” Tom, a level 300 expert known for his coding skills, has 5 years of Azure Data Lake experience at Oracle.
+“Power Platform Pro” Nancy, a level 100 expert and great coder, has 2 years of Power BI experience at SAP.
+“IoT Innovator” Chris, a level 200 expert and excellent coder, has 4 years of Azure IoT Hub experience at Intel.
+“Serverless Samurai” Olivia, a level 300 expert and great coder, has 3 years of Azure Logic Apps experience at Adobe.
+“Database Dynamo” Paul, a level 200 expert known for his coding skills, has 5 years of Azure SQL Database experience at Dell.
+“Analytics Ace” Rachel, a level 100 expert and great coder, has 2 years of Azure Synapse Analytics experience at HP.
+“Virtualization Virtuoso” Steve, a level 300 expert and excellent coder, has 4 years of Azure Virtual Machines experience at VMware.
+“Identity Insider” Tina, a level 200 expert and great coder, has 3 years of Azure Active Directory experience at LinkedIn.
+“Blockchain Buff” William, a level 300 expert known for his coding skills, has 5 years of Azure Blockchain Service experience at Coinbase.
+“Media Maven” Yvonne, a level 100 expert and great coder, has 2 years of Azure Media Services experience at Netflix.
+“Kubernetes Captain” Zach, a level 200 expert and excellent coder, has 4 years of Azure Kubernetes Service experience at Red Hat.
+“Event Grid Guru” Alice, a level 300 expert and great coder, has 3 years of Azure Event Grid experience at Twitter.
+“Data Dynamo” Brian, a level 200 expert and great coder, has 3 years of Azure Data Factory experience at Microsoft.
+“Cloud Crusader” Catherine, a level 300 expert and excellent coder, has 4 years of Azure Cloud Services experience at Amazon.
+“DevOps Dynamo” David, a level 200 expert known for his coding skills, has 5 years of Azure DevOps experience at Google.
+“AI Architect” Eva, a level 300 expert and great coder, has 4 years of Azure Cognitive Services experience at IBM.
+“DevOps King” Frank, a level 200 expert and excellent coder, has 3 years of Azure DevOps experience at Facebook.
+“Network Ninja” Grace, a level 100 expert and great coder, has 2 years of Azure Networking experience at Cisco.
+“Security Shield” Harry, a level 300 expert and excellent coder, has 4 years of Azure Security Center experience at Symantec.
+“App Service Ace” Isabella, a level 200 expert and great coder, has 3 years of Azure App Service experience at Salesforce.
+“Data Lake Diver” Jack, a level 300 expert known for his coding skills, has 5 years of Azure Data Lake experience at Oracle.
+“Power Platform Pro” Kelly, a level 100 expert and great coder, has 2 years of Power BI experience at SAP.
+“IoT Innovator” Liam, a level 200 expert and excellent coder, has 4 years of Azure IoT Hub experience at Intel.
+“Serverless Samurai” Mia, a level 300 expert and great coder, has 3 years of Azure Logic Apps experience at Adobe.
+“Database Dynamo” Noah, a level 200 expert known for his coding skills, has 5 years of Azure SQL Database experience at Dell.
+“Analytics Ace” Olivia, a level 100 expert and great coder, has 2 years of Azure Synapse Analytics experience at HP.
+“Virtualization Virtuoso” Peter, a level 300 expert and excellent coder, has 4 years of Azure Virtual Machines experience at VMware.
+“Identity Insider” Quincy, a level 200 expert and great coder, has 3 years of Azure Active Directory experience at LinkedIn.
+“Blockchain Buff” Robert, a level 300 expert known for his coding skills, has 5 years of Azure Blockchain Service experience at Coinbase.
+“Media Maven” Sophia, a level 100 expert and great coder, has 2 years of Azure Media Services experience at Netflix.
+“Kubernetes Captain” Thomas, a level 200 expert and excellent coder, has 4 years of Azure Kubernetes Service experience at Red Hat.
+“Event Grid Guru” Uma, a level 300 expert and great coder, has 3 years of Azure Event Grid experience at Twitter.
+“Data Guru” Victor, a level 200 expert and great coder, has 2 years of Azure Machine Learning experience at Microsoft.
+“Cloud Queen” Wendy, a level 300 expert and excellent coder, has 3 years of Azure Functions experience at Amazon.
+“Storage Master” Xavier, a level 200 expert known for his coding skills, has 5 years of Azure Storage experience at Google.
+“AI Architect” Yara, a level 300 expert and great coder, has 4 years of Azure Cognitive Services experience at IBM.
+“DevOps King” Zack, a level 200 expert and excellent coder, has 3 years of Azure DevOps experience at Facebook.
+“Network Ninja” Abby, a level 100 expert and great coder, has 2 years of Azure Networking experience at Cisco.
+“Security Shield” Ben, a level 300 expert and excellent coder, has 4 years of Azure Security Center experience at Symantec.
+“App Service Ace” Clara, a level 200 expert and great coder, has 3 years of Azure App Service experience at Salesforce.
