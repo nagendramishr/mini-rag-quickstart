@@ -30,13 +30,13 @@ subgraph M365
 A[Teams]
 end
 subgraph Azure
-A-- Chat --> B{Logic Apps}
-B --> C(Azure Function)
-D[(CosmosDB)] --> C
+A-- 1. Chat --> B{Logic Apps}
+B -- 2. --> C(Azure Function)
+D[(CosmosDB)] -- 3. --> C
 end
-C --> E(OpenAI)
-C -- Response --> B
-B -- Update Chat --> A 
+C -- 4. --> E(OpenAI)
+C -- 5. Response --> B
+B -- 6. Update Chat --> A 
 ```
 
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
