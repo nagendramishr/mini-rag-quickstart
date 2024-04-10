@@ -101,5 +101,11 @@ For these, we're going to use the cloud shell ( or your own az cli that is alrea
 
 <img width="588" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
 
-`az cosmosdb sql container create --account-name MyCosmosDBAccount --database-name MyDatabase --resource-group MyResourceGroup --name MyContainer --partition-key-path "/mypartitionkey"
+Edit the first three lines below with the correct values for your resource group, 
+`
+> export RG=aoai-rag
+> export COSMOS_ACCT=nvmopenaicosmosdb
+> export COSMOS_DB=aoaidb
+az cosmosdb sql container create --account-name $COSMOS_ACCT --database-name $COSMOS_DB --resource-group $RG --name facts --partition-key-path "/Id"
+
 `
