@@ -82,6 +82,8 @@ You will receive an email that you have been granted access.  Once you have that
 
 We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it's actually Azure functions that makes it easy to read from comsosDB. [And a storage acct, and event hub, and a queue, etc...] )
 
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/214fa10d-5d8c-4d51-875c-f4b808d4e4b4)
+
 ---------------------
 
 ## Hooking it up
@@ -105,17 +107,37 @@ For these, we're going to use the cloud shell ( or your own az cli that is alrea
 
 <img width="588" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
 
-Edit the first three lines below with the correct values for your resource group, 
-
-# Edit these values and run them in your cloud shell
+In the cloud shell, clone this repo so that you have access to the scripts:
 ```
-export RG=aoai-rag
-export COSMOS_ACCT=nvmopenaicosmosdb
+git clone https://github.com/nagendramishr/mini-rag-quickstart.git
+```
+
+Edit the first three lines of bin/setup.sh as shown below with the correct values for your resource group, 
+
+```
+>**head -5 bin/setup.sh**
+#!/bin/sh
+
+export RG=aoai-rag 
+export COSMOS_ACCT=nvmopenaicosmosdb 
 export COSMOS_DB=aoaidb
 ```
+
+# modify any facts from data/cosmosdb-facts.txt
+
+The facts in this file were generated via the prompt generator as a test for this exercise.  You can modify these for your own purpose.
+
+# run the setup scripts and upload the facts into the DB
+
 # Create a new CosmosDB container
 ```
-az cosmosdb sql container create --account-name $COSMOS_ACCT --database-name $COSMOS_DB --resource-group $RG --name facts --partition-key-path "/Id"
+. bin/setup.sh
+. bin/createDB.sh
+. bin/insertCosmos.py
+
 ```
+
+You should now have a cosmosDB with a noSQL db in it containing the facts from the facts file.
+
 # Add some sample records to the DB
 
