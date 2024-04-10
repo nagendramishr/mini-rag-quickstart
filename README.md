@@ -47,11 +47,16 @@ B -- 6. Update Chat --> A
 |6 | Logic App | The Logic App updates the conversation with the response from OpenAI |
 
 ## Building it manually
-## Create the resources:
-### 1 Teams channel
-### 2 Logic App
-### 3 Azure Function
-### 4 OpenAI 
+### Create the resources:
+#### Teams channel
+
+Teams will be used as the chat UI for this project.  To keep things simple, create a new team.  We'll use the general channel in this newly created team.
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/3805c120-82af-48da-83aa-500f68f50dec)
+
+
+#### Logic App
+#### Azure Function
+#### OpenAI 
 
 ## Hooking it up
 
