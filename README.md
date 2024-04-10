@@ -38,6 +38,10 @@ B -- 6. Update Chat --> A
 |----|-----------|----------|
 | 1    | Teams     | User enters text in chat|
 | 2  |  Logic App | Logic app invokes Azure function |
+| 3|| Azure Function | Functions reads contents from cosmosDB |
+| 4| Azure Function  | The function dynamically creates the prompt and calls OpenAI |
+| 5| Azure Function | The function optionally interacts further with OpenAI but ultimately returns the response to teams  |
+|6 | Logic App | The Logic App updates the conversation with the response from OpenAI |
 
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
 
