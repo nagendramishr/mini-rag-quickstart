@@ -29,7 +29,7 @@ graph LR
 A[Teams] -- Chat --> B{Logic Apps}
 B --> C(Azure Function)
 D((CosmosDB)) --> C
-C --> D(OpenAI)
+C --> E(OpenAI)
 ```
 
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
