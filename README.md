@@ -107,14 +107,15 @@ For these, we're going to use the cloud shell ( or your own az cli that is alrea
 
 Edit the first three lines below with the correct values for your resource group, 
 
-# Edit these values 
+# Edit these values and run them in your cloud shell
 ```
-    export RG=aoai-rag
-    export COSMOS_ACCT=nvmopenaicosmosdb
-    export COSMOS_DB=aoaidb
+export RG=aoai-rag
+export COSMOS_ACCT=nvmopenaicosmosdb
+export COSMOS_DB=aoaidb
 ```
 # Create a new CosmosDB container
-``
+```
 az cosmosdb sql container create --account-name $COSMOS_ACCT --database-name $COSMOS_DB --resource-group $RG --name facts --partition-key-path "/Id"
+```
+# Add some sample records to the DB
 
-``
