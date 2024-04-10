@@ -96,4 +96,10 @@ Overall implementing a Retrieval-Augmented Generation (RAG) model involves sever
 
 ### Here are the steps:
 
+Use case: We're going to let AOAI answer some basic questions for us about our team members.  We'er going to create 1 sentence at a time in cosmos.
+For these, we're going to use the cloud shell ( or your own az cli that is already logged in )
 
+<img width="588" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
+
+`az cosmosdb sql container create --account-name MyCosmosDBAccount --database-name MyDatabase --resource-group MyResourceGroup --name MyContainer --partition-key-path "/mypartitionkey"
+`
