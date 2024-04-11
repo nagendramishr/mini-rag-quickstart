@@ -155,10 +155,33 @@ You should now have a cosmosDB with a noSQL db in it containing the facts from t
 # Upload the sample azure functions code to your instance.
 
 An Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to Azure and then configured with the endpoints for CosmosDB and OpenAI.  
+Since you will be doing development in this code for your hack, it will be best to open it up in VS Code locally on your local machine.  Navigate to the src/azureFunction folder.  Make sure that you have the following extensions installed:
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/32fb63a4-d068-49ee-a5ba-81844a56e124)
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/2eafb8db-7c7f-4ac0-9ca8-aa9a32077818)
+
+your VS code Explorer section should look like this:
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/252e4c7e-1fc3-4874-a293-de06954ec1fb)
+
+1. Type `Ctrl-Shift-P`  and select **Azure Functions: Deploy to Function App...**.
+2. Select your subscription
+3. select your function app
+4. Confirm that you want to deploy the function
+
+Now that your function code has been deployed, you next need to set up the configuration for the following variables.
+
+edit the contents of src/updateFNConfig.sh
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/73cd59c0-5cec-46ba-9b66-756c83fe4a30)
+
+Now run the update script to set the values in your Azure Function.
 
 ```
-broken deploy code here
+bin/updateFNConfig.sh
 ```
+
+You may have to restart your Azure function, but it should now be up and running.  You are ready to hook it up to the logic app.
 
 # Create your logic app.
 
