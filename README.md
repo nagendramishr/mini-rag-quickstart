@@ -152,7 +152,32 @@ bin/insertCosmos.py
 
 You should now have a cosmosDB with a noSQL db in it containing the facts from the facts file.
 
-# Upload the sampel azure functions code to your instance.
+# Upload the sample azure functions code to your instance.
 
-An azyure function has already been created for you
+An Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to Azure and then configured with the endpoints for CosmosDB and OpenAI.  
 
+```
+broken deploy code here
+```
+
+# Create your logic app.
+
+Overall, the logic app has 3 steps.
+1. It's triggered when a message appears in teams.  In this step we will need to configure the teams connection and grant access to the logic app.
+2. Once a message is received, if the Subject is "Question", the Azure function from the previous step will be called with the users question.
+3. The response from the azure function will be uploaded into teams as a reply to the original message.
+
+   ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc311cea-f0e8-41f9-8c37-7b7989b0fbc4)
+
+In the first step, add a trigger: **When a new channel message is added**.  Select the team that was created in step 1 along with the General channel.  You will be asked to login and allow the logic app to connect on your behalf.  For the question **How often fo you want to check for items?**, select once per minute.
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/9d25e91e-740f-427d-a388-f1bf23d3731d)
+
+Add **condition** as the next action and require that the Message subject is equal to **"Question"**. If up don't do this, the bot will get triggered when it responds to your question and it will respond to its own response.
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a6b2e6a9-87e1-4ce6-ba22-1c20880f312a)
+
+On the true side of the condition, add a **HTTP** action.  This action will call the azure function with a question whose value is the **message body content** that was posted on teams.  For the URL, enter the URL for your azure function.
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc84af51-b7fe-40aa-ade6-91d46d3fac72)
+
+You can find the URL for your azure function 
