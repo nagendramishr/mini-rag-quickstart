@@ -196,28 +196,31 @@ Overall, the logic app has 3 steps.
 2. Once a message is received, if the Subject is "Question", the Azure function from the previous step will be called with the users question.
 3. The response from the azure function will be uploaded into teams as a reply to the original message.
 
-   ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc311cea-f0e8-41f9-8c37-7b7989b0fbc4)
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc311cea-f0e8-41f9-8c37-7b7989b0fbc4" width="400">
 
 In the first step, add a trigger: **When a new channel message is added**.  Select the team that was created in step 1 along with the General channel.  You will be asked to login and allow the logic app to connect on your behalf.  For the question **How often fo you want to check for items?**, select once per minute.
-![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/9d25e91e-740f-427d-a388-f1bf23d3731d)
+
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/9d25e91e-740f-427d-a388-f1bf23d3731d" width="500">
 
 Add **condition** as the next action and require that the Message subject is equal to **"Question"**. If up don't do this, the bot will get triggered when it responds to your question and it will respond to its own response.
 
-![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a6b2e6a9-87e1-4ce6-ba22-1c20880f312a)
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a6b2e6a9-87e1-4ce6-ba22-1c20880f312a" width="500">
 
 On the true side of the condition, add a **HTTP** action.  This action will call the azure function with a question whose value is the **message body content** that was posted on teams.  For the URL, enter the URL for your azure function.
 
-![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc84af51-b7fe-40aa-ade6-91d46d3fac72)
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc84af51-b7fe-40aa-ade6-91d46d3fac72" width="500">
 
 You can find the URL for your azure function by clicking into the "AskQuestion" function on the Overview page and then clicking **Get Function URL**:
-<img width="482" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/d53d5487-60bb-41f9-9d5b-459c5f75ca18">
+
+<img width="550" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/d53d5487-60bb-41f9-9d5b-459c5f75ca18">
 
 After the HTTP step, add another action: **Reply with a message in channel**.  Here, the important part is to select the message ID from the original question as the message ID for the response.  Also, be sure to include the Body from the HTTP request which contains the BOT's response.
 
-![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/eecff9c7-e25d-4c34-b287-3a7c95c07e03)
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/eecff9c7-e25d-4c34-b287-3a7c95c07e03" width="500">
 
 
 Now, you can post a message in the teams channel and after a few minutes, you will see a response.
-![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/e12e0d46-cde9-4aec-9866-e31785b781b4)
 
-![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/f6a0d6fd-281d-487d-91fa-dd3a69cd9090)
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/e12e0d46-cde9-4aec-9866-e31785b781b4" width="600">
+
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/f6a0d6fd-281d-487d-91fa-dd3a69cd9090" width="600">
