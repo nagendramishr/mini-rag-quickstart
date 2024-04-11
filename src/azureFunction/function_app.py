@@ -17,16 +17,18 @@ app = func.FunctionApp()
 def AskQuestion(inputDocuments: func.DocumentList, req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    if not req.params.get('question'):
+    # Get the question from the request parameters
+    raw_question = req.params.get('question')
 
+    # Check if the question is provided
+    if not raw_question:
         return func.HttpResponse(
             "Please pass a question on the query string",
             status_code=400
         )
 
-    # pull out the text from the body of the request via a regex
-    question = re.search(r'(?<=<p>)(.*?)(?=<\/p>)', req.params.get('question')).group(0)
-
+    # Remove all HTML tags from the question
+    clean_question = re.sub('<.*?>', '', raw_question)
 
     if inputDocuments:
         client = AzureOpenAI(
@@ -36,10 +38,10 @@ def AskQuestion(inputDocuments: func.DocumentList, req: func.HttpRequest) -> fun
         )
 
         #Join all the facts into a single string
-        facts = "\n".join([doc.data['fact'] for doc in inputDocuments])                        
+        facts = "These are the local experts." + "\n".join([doc.data['fact'] for doc in inputDocuments])                        
            
         message_text = [{"role":"system","content": facts}, 
-                        {"role":"user","content": question + 
+                        {"role":"user","content": clean_question + 
                          ". Be as helpful as possible in connecting the above local experts in the response. State the response as a gramatically correct and complete summary."}]
 
         completion = client.chat.completions.create(
