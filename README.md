@@ -180,4 +180,15 @@ On the true side of the condition, add a **HTTP** action.  This action will call
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc84af51-b7fe-40aa-ade6-91d46d3fac72)
 
-You can find the URL for your azure function 
+You can find the URL for your azure function by clicking into the "AskQuestion" function on the Overview page and then clicking **Get Function URL**:
+<img width="482" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/d53d5487-60bb-41f9-9d5b-459c5f75ca18">
+
+After the HTTP step, add another action: **Reply with a message in channel**.  Here, the important part is to select the message ID from the original question as the message ID for the response.  Also, be sure to include the Body from the HTTP request which contains the BOT's response.
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/eecff9c7-e25d-4c34-b287-3a7c95c07e03)
+
+
+Now, you can post a message in the teams channel and after a few minutes, you will see a response.
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/e12e0d46-cde9-4aec-9866-e31785b781b4)
+
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/f6a0d6fd-281d-487d-91fa-dd3a69cd9090)
