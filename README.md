@@ -223,4 +223,7 @@ Now, you can post a message in the teams channel and after a few minutes, you wi
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/e12e0d46-cde9-4aec-9866-e31785b781b4" width="600">
 
-   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/f6a0d6fd-281d-487d-91fa-dd3a69cd9090" width="600">
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/f6a0d6fd-281d-487d-91fa-dd3a69cd9090" width="800">
+
+   <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/199b9c18-f14d-4096-9318-c46b6a8e76b9" width="800">
+
