@@ -89,6 +89,7 @@ In the portal navigate to the deployed instance and select "Model deployments" o
 This will ask you to confirm that you're navigating to Azure OpenAI Studio.  Confirm and create a new deployment:
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/58cc84a8-8fb4-490a-930b-5ceef29d1576" width="400">
+
 Your deployment name in this case, its called **gpt35**.
 
 Make a note of this deployment name, the endpoint and key. You will need these when you configure your azure function settings.  
@@ -97,7 +98,7 @@ Make a note of this deployment name, the endpoint and key. You will need these w
 
 We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it's actually Azure functions that makes it easy to read from comsosDB. [And a storage acct, and event hub, and a queue, etc...] )
 
-![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/214fa10d-5d8c-4d51-875c-f4b808d4e4b4)
+<img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/214fa10d-5d8c-4d51-875c-f4b808d4e4b4" width="500">
 
 ---------------------
 
@@ -120,9 +121,10 @@ Overall implementing a Retrieval-Augmented Generation (RAG) model involves sever
 Use case: We're going to let AOAI answer some basic questions for us about our team members.  The source data will have 1 sentence for each fact.  We'll run a script to import those into cosmos.
 In order to run the script, we're going to use the cloud shell ( or your own az cli that is already logged in )
 
-<img width="588" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
+<img width="650" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
 
 In the cloud shell, clone this repo so that you have access to the scripts:
+
 ```
 git clone https://github.com/nagendramishr/mini-rag-quickstart.git
 ```
