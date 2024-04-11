@@ -11,7 +11,7 @@ if [ -z "$AOAI_APP" ]; then
     exit 1
 fi
 
-cd src/azureFunctions
+cd src/azureFunction
 
 # make the dist directory
 mkdir -p dist
