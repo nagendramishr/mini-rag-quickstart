@@ -12,7 +12,7 @@ The goal of this project is to help you get up an running quickly with a build o
 
 In general, LLM's are costly to train and customize because training requires very large GPU clusters running for extended periods of time. You can follow this in-dept discussion here:  [Efficient LLM Training](https://arxiv.org/pdf/2104.04473.pdf). The problem is made more complicated if the data is constantly changing.
 
-To overcome the training problem customers can implement the RAG model and overcome many of the problems: 
+In addition to solving the training problem customers who implement the RAG model have several other benefits:   
 
 > - **Access to External Knowledge:** RAG provides LLMs access to external knowledge through documents, resulting in contextually accurate and factual responses.
 > - **Cost-Effective:** RAG is more cost-effective than fine-tuning, as it doesn’t require the labeled data and computational resources that come with model training.
@@ -113,8 +113,8 @@ Overall implementing a Retrieval-Augmented Generation (RAG) model involves sever
 
 ### Here are the steps:
 
-Use case: We're going to let AOAI answer some basic questions for us about our team members.  We'er going to create 1 sentence at a time in cosmos.
-For these, we're going to use the cloud shell ( or your own az cli that is already logged in )
+Use case: We're going to let AOAI answer some basic questions for us about our team members.  The source data will have 1 sentence for each fact.  We'll run a script to import those into cosmos.
+In order to run the script, we're going to use the cloud shell ( or your own az cli that is already logged in )
 
 <img width="588" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
 
