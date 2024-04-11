@@ -1,3 +1,4 @@
+import re
 import azure.functions as func
 import datetime
 import json
@@ -13,14 +14,19 @@ app = func.FunctionApp()
                      database_name="aoaidb",
                      container_name="facts",
                      connection="MyAccount_COSMOSDB")
-def test_function(inputDocuments: func.DocumentList, req: func.HttpRequest) -> func.HttpResponse:
+def AskQuestion(inputDocuments: func.DocumentList, req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     if not req.params.get('question'):
+
         return func.HttpResponse(
             "Please pass a question on the query string",
             status_code=400
         )
+
+    # pull out the text from the body of the request via a regex
+    question = re.search(r'(?<=<p>)(.*?)(?=<\/p>)', req.params.get('question')).group(0)
+
 
     if inputDocuments:
         client = AzureOpenAI(
@@ -33,7 +39,8 @@ def test_function(inputDocuments: func.DocumentList, req: func.HttpRequest) -> f
         facts = "\n".join([doc.data['fact'] for doc in inputDocuments])                        
            
         message_text = [{"role":"system","content": facts}, 
-                        {"role":"user","content": req.params.get('question')}]
+                        {"role":"user","content": question + 
+                         ". Be as helpful as possible in connecting the above local experts in the response. State the response as a gramatically correct and complete summary."}]
 
         completion = client.chat.completions.create(
             messages = message_text,
@@ -47,7 +54,7 @@ def test_function(inputDocuments: func.DocumentList, req: func.HttpRequest) -> f
         )
 
     return func.HttpResponse(
-        "{\"response\": \""+completion.choices[0].message.content+"\"}",
+        completion.choices[0].message.content,
         status_code=200
         )
 
