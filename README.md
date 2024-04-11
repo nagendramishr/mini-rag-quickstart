@@ -102,7 +102,7 @@ We'll need some place to keep the data that will be used to generate the respons
 
 ---------------------
 
-## Hooking it up
+## Stitching it all together
 
 Overall implementing a Retrieval-Augmented Generation (RAG) model involves several steps.  But it'll take longer to read through these than to do the actual mini-RAG implementation.
 
