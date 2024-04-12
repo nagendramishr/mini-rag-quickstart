@@ -66,7 +66,7 @@ Now for the LLM magic.  Here we'll create an **OpenAI** Instance from the portal
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/83126828-2798-4e98-8889-a39faafa4470" width="400">
 
-You will receive an email that you have been granted access.  Once you have that, create a new instance using the S0 tier.  We’ll create a GPT-3 instance in the next step.
+You will receive an email that you have been granted access.  Once you have that, create a new instance using the S0 tier.  We’ll create the GPT-3 instance in the next step.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/d03ef280-afa1-485e-9833-13f60ada2578" width="500">
 
@@ -83,7 +83,7 @@ This will ask you to confirm that you're navigating to **Azure OpenAI Studio**. 
 
 Your deployment name in this case, its called **gpt35**.
 
-Make a note of this deployment name, the endpoint and key. You will need these when you configure your azure function settings.  
+Make a note of this deployment name, the endpoint and key. You will need these when you configure your **Azure Function** settings.  
 
 #### 5. Create a new CosmosDB instance
 
