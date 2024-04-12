@@ -59,7 +59,7 @@ Teams will be used as the chat UI for this project.  To keep things simple, crea
 
 #### 2. Create a new Logic App
 
-The logic app will be used to shuttle message between the chat and **Azure Functions**.  Create a new Logic in the Azure Portal.
+The logic app will be used to shuttle message between the chat and **Azure Functions**.  Create a new **Logic App** in the Azure Portal.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/6f5c2315-812f-417a-b1b2-3d82973125ab" width="500">
 
