@@ -170,7 +170,7 @@ Open up **VS Code** to the src/azurefunctions folder that you cloned locally.  Y
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/252e4c7e-1fc3-4874-a293-de06954ec1fb" width="200">
 
-Deploy your code.  If you want to know more about deploying from VS code you can watch [this video](https://www.youtube.com/watch?v=-W2utG3CCrs&t=3s&ab_channel=AzureAppModernization) if you run into issues.
+Deploy your code.  If you want to know more about deploying from VS code you can watch [this video](https://www.youtube.com/watch?v=-W2utG3CCrs&t=3s&ab_channel=AzureAppModernization).
 1. Type `Ctrl-Shift-P`  and select **Azure Functions: Deploy to Function App...**.
 2. Select your subscription
 3. Select your function app
