@@ -27,7 +27,8 @@ In addition to solving the training problem customers who implement the RAG mode
 
 The project will allow you to incorporate openAI into 
 
-![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a412648a-780f-453f-a917-24db27ea0c2e)
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/8f9fecd0-d28a-462a-9d37-c201b6b5c21c)
+
 
 
 |    | Component | Activity |
