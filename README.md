@@ -141,7 +141,7 @@ The facts in this file were generated via the prompt generator as a test for thi
 ```
 chmod ugo+x bin/*
 
-. bin/setup.sh
+source bin/setup.sh
 bin/createDB.sh
 bin/insertCosmos.py
 
