@@ -25,7 +25,7 @@ Customers who implement the RAG model not only solve the training issues, but th
 
 # Project Overview
 
-The project will allow you to incorporate openAI into 
+This project will allow you to incorporate **Azure OpenAI** into a **Teams Channel**.
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/1ae8c7c6-fc72-485a-85e5-701f696339fb)
 
