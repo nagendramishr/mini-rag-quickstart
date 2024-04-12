@@ -165,7 +165,7 @@ Make sure that you have the following extensions installed:
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/32fb63a4-d068-49ee-a5ba-81844a56e124" width="300">
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/2eafb8db-7c7f-4ac0-9ca8-aa9a32077818" width="300">
 
-Your VS Code Explorer section should look like this:
+Open up **VS Code** to the src/azurefunctions folder that you cloned locally.  Your **VS Code Explorer** section should look like this:
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/252e4c7e-1fc3-4874-a293-de06954ec1fb" width="200">
 
