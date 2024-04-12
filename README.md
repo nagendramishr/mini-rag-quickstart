@@ -59,19 +59,19 @@ Teams will be used as the chat UI for this project.  To keep things simple, crea
 
 #### 2. Create a new Logic App
 
-The logic app will be used to shuttle message between the chat and Azure functions.  Create a new Logic in the azure portal.
+The logic app will be used to shuttle message between the chat and **Azure Functions**.  Create a new Logic in the Azure Portal.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/6f5c2315-812f-417a-b1b2-3d82973125ab" width="500">
 
 #### 3. Create a new Azure Function
 
-The function app will be used to call the OpenAI service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  If you have a different version of python installed locally, choose the version that matches your local system.
+The function app will be used to call the **OpenAI** service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  If you have a different version of python installed locally, choose the version that matches your local system.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fd2c9000-aff1-434b-835c-a3f836e272e2" width="500">
 
 #### 4. Create a new OpenAI instance
 
-Now for the LLM magic.  Here we'll create an openAI Instance from the portal.  Note, you will need to apply for access  ( and be accepted ) before you can instantiate this.  If you don't have access yet, click on [Apply for access](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
+Now for the LLM magic.  Here we'll create an **OpenAI** Instance from the portal.  Note, you will need to apply for access  ( and be accepted ) before you can instantiate this.  If you don't have access yet, click on [Apply for access](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/83126828-2798-4e98-8889-a39faafa4470" width="400">
 
@@ -86,7 +86,7 @@ In the portal navigate to the deployed instance and select "Model deployments" o
 
 <img width="200" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/f6dc7d7d-6a5b-4c28-9562-9abff246c736">
 
-This will ask you to confirm that you're navigating to Azure OpenAI Studio.  Confirm and create a new deployment:
+This will ask you to confirm that you're navigating to **Azure OpenAI Studio**.  Confirm and create a new deployment:
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/58cc84a8-8fb4-490a-930b-5ceef29d1576" width="400">
 
@@ -96,7 +96,7 @@ Make a note of this deployment name, the endpoint and key. You will need these w
 
 #### 5. Create a new CosmosDB instance
 
-We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it’s actually Azure functions that make it easy to read from CosmosDB. [And a storage acct, and event hub, and a queue, etc...] )
+We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a **CosmosDB**.  The cool thing about **CosmosDB** is that it makes it super easy to connect to **Azure Functions** ( More correctly, it’s actually **Azure Functions** that make it easy to read from **CosmosDB**. [And a storage acct, and event hub, and a queue, etc...] )
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/214fa10d-5d8c-4d51-875c-f4b808d4e4b4" width="500">
 
@@ -118,7 +118,7 @@ Overall implementing a Retrieval-Augmented Generation (RAG) model involves sever
 
 ### Here are the steps:
 
-Use case: We’re going to let Azure OpenAI answer some basic questions for us about our team members.  The source data will have 1 sentence for each fact.  We'll run a script to import those into cosmosDB.
+Use case: We’re going to let **Azure OpenAI** answer some basic questions for us about our team members.  The source data will have 1 sentence for each fact.  We'll run a script to import those into **CosmosDB**.
 In order to run the script, we're going to use the Cloud Shell ( or your own az cli that is already logged in )
 
 <img width="650" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
@@ -156,11 +156,11 @@ bin/insertCosmos.py
 
 ```
 
-You should now have a cosmosDB with a noSQL db in it containing the facts from the facts file.
+You should now have a **cosmosDB** with a noSQL db in it containing the facts from the facts file.
 
-# Upload the sample azure functions code to your instance.
+# Upload the sample Azure Functions code to your instance.
 
-An Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to Azure and then configured with the endpoints for CosmosDB and OpenAI.  
+An Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to Azure and then configured with the endpoints for **CosmosDB** and **OpenAI**.  
 Since you will be doing development in this code for your hack, it will be best to open it up in VS Code locally on your local machine.  Navigate to the src/azureFunction folder.  Make sure that you have the following extensions installed:
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/32fb63a4-d068-49ee-a5ba-81844a56e124" width="300">
@@ -187,18 +187,18 @@ Now run the update script to set the values in your Azure Function.
 bin/updateFNConfig.sh
 ```
 
-You may have to restart your Azure function, but it should now be up and running.  You are ready to hook it up to the logic app.
+You may have to restart your Azure function, but it should now be up and running.  You are ready to connect it to the **Logic App**.
 
 # Create your Logic App.
 
 Overall, the logic app has 3 steps.
-1. It's triggered when a message appears in Teams.  In this step we will need to configure the teams connection and grant access to the logic app.
+1. It's triggered when a message appears in Teams.  In this step we will need to configure the teams connection and grant access to the **Logic App**.
 2. Once a message is received, if the Subject is "Question", the Azure function from the previous step will be called with the users question.
 3. The response from the azure function will be uploaded into teams as a reply to the original message.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc311cea-f0e8-41f9-8c37-7b7989b0fbc4" width="400">
 
-In the first step, add a trigger: **When a new channel message is added**.  Select the team that was created in step 1 along with the General channel.  You will be asked to login and allow the logic app to connect on your behalf.  For the question **How often do you want to check for items?**, select once per minute.
+In the first step, add a trigger: **When a new channel message is added**.  Select the team that was created in step 1 along with the General channel.  You will be asked to login and allow the **Logic App** to connect on your behalf.  For the question **How often do you want to check for items?**, select once per minute.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/9d25e91e-740f-427d-a388-f1bf23d3731d" width="500">
 
