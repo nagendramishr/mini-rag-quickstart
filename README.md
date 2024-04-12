@@ -31,15 +31,13 @@ The project will allow you to incorporate openAI into
 
 
 
-|    | Component | Activity |
-|----|-----------|----------|
-| 1    | Teams     | User enters text in chat|
-| 2  |  Logic App | Logic app invokes Azure function |
-| 3|| Azure Function | Functions reads contents from cosmosDB |
-| 4| Azure Function  | The function dynamically creates the prompt and calls OpenAI |
-| 5| Azure Function | The function optionally interacts further with OpenAI but ultimately returns the response to teams  |
-|6 | Logic App | The Logic App updates the conversation with the response from OpenAI |
-
+| Component | Activity |
+|-----------|----------|
+|Teams     | User enters text in chat|
+| Logic App | Logic app invokes Azure function.  Once the call to the function completes, the App injects the response back into the chat as a response. |
+|Azure Function | Functions reads contents from cosmosDB, creates the prompt and calls OpenAI.  After receiving the response from OpenAI, the function perform additional computation before responding to the Logic App. |
+| CosmosDB | Contains the data that will be used to augment the chat request |
+|  OpenAI | The hosted LLM that is responsible for processing the enhanced request and formulating a response.  |
 -------------------
 
 ## Building it manually
