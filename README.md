@@ -172,12 +172,12 @@ Open up **VS Code** to the src/azurefunctions folder that you cloned locally.  Y
 
 1. Type `Ctrl-Shift-P`  and select **Azure Functions: Deploy to Function App...**.
 2. Select your subscription
-3. select your function app
+3. Select your function app
 4. Confirm that you want to deploy the function
 
 Now that your function code has been deployed, you next need to set up the configuration for the following variables.
 
-edit the contents of src/updateFNConfig.sh
+Edit the contents of src/updateFNConfig.sh
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/73cd59c0-5cec-46ba-9b66-756c83fe4a30)
 
