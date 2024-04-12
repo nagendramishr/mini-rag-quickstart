@@ -212,15 +212,15 @@ In the first step, add a trigger: **When a new channel message is added**.  Sele
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/9d25e91e-740f-427d-a388-f1bf23d3731d" width="500">
 
-Add **condition** as the next action and require that the Message subject is equal to **"Question"**. If up don't do this, the bot will get triggered when it responds to your question and it will respond to its own response.
+Add **Condition** as the next action and require that the Message Subject is equal to **"Question"**. If up don't do this, the bot will get triggered when it responds to your question and it will respond to its own response.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a6b2e6a9-87e1-4ce6-ba22-1c20880f312a" width="500">
 
-On the true side of the condition, add a **HTTP** action.  This action will call the azure function with a question whose value is the **message body content** that was posted on teams.  For the URL, enter the URL for your azure function.
+On the **True** side of the condition, add an **HTTP** action.  This action will call the **Azure Function** with a question whose value is the **message body content** that was posted on teams.  For the URL, enter the URL for your **Azure Function**.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc84af51-b7fe-40aa-ade6-91d46d3fac72" width="500">
 
-You can find the URL for your azure function by clicking into the "AskQuestion" function on the Overview page and then clicking **Get Function URL**:
+You can find the URL for your **Azure Function** by clicking into the "AskQuestion" function on the Overview page and then clicking **Get Function URL**:
 
 <img width="550" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/d53d5487-60bb-41f9-9d5b-459c5f75ca18">
 
