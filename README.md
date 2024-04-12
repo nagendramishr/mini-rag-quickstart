@@ -38,6 +38,14 @@ This project will allow you to incorporate **Azure OpenAI** into a **Teams Chann
 | CosmosDB | Contains the data that will be used to augment the chat request |
 |  OpenAI | The hosted LLM that is responsible for processing the enhanced request and formulating a response.  |
 -------------------
+## Prerequisites
+
+You will need the following in order to run through this quickstart:
+
+1. An Azure subscription with the ability to create Azure resources: ( Resource Group, Logic App, Azure Function, CosmosDB and Azure OpenAI ).
+2. Access to the the OpenAI offering in Azure. [ You can request access if you do not have it.](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
+3. A computer with VS Code installed on it:  [Windows / Mac](https://code.visualstudio.com/download)  -  [wsl](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode).
+4. [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-python#install-the-azure-functions-core-tools) installed on the computer.
 
 ## Building it manually
 ### Create the resources:
