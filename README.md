@@ -229,6 +229,8 @@ After the HTTP step, add another action: **Reply with a message in channel**.  H
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/eecff9c7-e25d-4c34-b287-3a7c95c07e03" width="500">
 
 
+# TESTING TO SEE IT IN ACTION:
+
 Now, you can post a message in the teams channel and after a few minutes, you will see a response.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/e12e0d46-cde9-4aec-9866-e31785b781b4" width="600">
