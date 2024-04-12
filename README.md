@@ -151,8 +151,16 @@ You should now have a **cosmosDB** with a noSQL db in it containing the facts fr
 
 # Upload the sample Azure Functions code to your instance.
 
-An Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to Azure and then configured with the endpoints for **CosmosDB** and **OpenAI**.  
-Since you will be doing development in this code for your hack, it will be best to open it up in VS Code locally on your local machine.  Navigate to the src/azureFunction folder.  Make sure that you have the following extensions installed:
+The source code for an Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to Azure and then configured with the endpoints for **CosmosDB** and **OpenAI**.  
+
+Since you will be doing development in this code for your hack, it will be best to open it up in VS Code locally on your local machine. Make sure to clone the repo locally as well.  You will need to install python and the [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-python#install-the-azure-functions-core-tools) as well.  Navigate to the src/azureFunction folder.  
+
+Clone the code locally:
+```
+> git clone https://github.com/nagendramishr/mini-rag-quickstart.git
+```
+
+Make sure that you have the following extensions installed:
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/32fb63a4-d068-49ee-a5ba-81844a56e124" width="300">
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/2eafb8db-7c7f-4ac0-9ca8-aa9a32077818" width="300">
