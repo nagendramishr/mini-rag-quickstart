@@ -59,13 +59,13 @@ Teams will be used as the chat UI for this project.  To keep things simple, crea
 
 #### 2. Create a new Logic App
 
-The logic app will be used to shuttle message between the chat and **Azure Functions**.  Create a new **Logic App** in the Azure Portal.
+The **Logic App** will be used to shuttle message between the **Teams** chat and **Azure Functions**.  Create a new **Logic App** in the **Azure Portal**.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/6f5c2315-812f-417a-b1b2-3d82973125ab" width="500">
 
 #### 3. Create a new Azure Function
 
-The function app will be used to call the **OpenAI** service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  If you have a different version of python installed locally, choose the version that matches your local system.
+The **Function App** will be used to call the **OpenAI** service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  If you have a different version of python installed locally, choose the version that matches your local system.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fd2c9000-aff1-434b-835c-a3f836e272e2" width="500">
 
