@@ -131,13 +131,13 @@ export COSMOS_ACCT=nvmopenaicosmosdb
 export COSMOS_DB=aoaidb
 ```
 
-# Modify any facts from data/cosmosdb-facts.txt
+#### Modify any facts from data/cosmosdb-facts.txt
 
 The facts in this file were generated via the prompt generator as a test for this exercise.  You can modify these for your own purpose.
 
-# run the setup scripts and upload the facts into the DB
+### Run the setup scripts and upload the facts into the DB
 
-# Create a new CosmosDB container
+#### Create a new CosmosDB container
 ```
 chmod ugo+x bin/*
 
@@ -149,7 +149,7 @@ bin/insertCosmos.py
 
 You should now have a **cosmosDB** with a noSQL db in it containing the facts from the facts file.
 
-# Upload the sample Azure Functions code to your instance.
+#### Upload the sample Azure Functions code to your instance.
 
 The source code for an Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to Azure and then configured with the endpoints for **CosmosDB** and **OpenAI**.  
 
