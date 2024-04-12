@@ -27,15 +27,8 @@ In addition to solving the training problem customers who implement the RAG mode
 
 The project will allow you to incorporate openAI into 
 
-```mermaid
-graph LR
-A[Teams]-- 1. Chat --> B{Logic Apps}
-B -- 2. --> C(Azure Function)
-D[(CosmosDB)] -- 3. --> C
-C -- 4. --> E(OpenAI)
-C -- 5. Response --> B
-B -- 6. Update Chat --> A 
-```
+![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a412648a-780f-453f-a917-24db27ea0c2e)
+
 
 |    | Component | Activity |
 |----|-----------|----------|
