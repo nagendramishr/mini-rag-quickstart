@@ -120,7 +120,7 @@ In the cloud shell, clone this repo so that you have access to the scripts:
 git clone https://github.com/nagendramishr/mini-rag-quickstart.git
 ```
 
-Edit the first three lines of bin/setup.sh as shown below with the correct values for your resource group, 
+Edit the first three variables of bin/setup.sh as shown below with the correct values for the resources your created. 
 
 ```
 >head -5 bin/setup.sh
