@@ -2,7 +2,7 @@
 
 ## Background
 
-The goal of this project is to help you get up an running quickly with a build out of a RAG model. Before you dive in, if you're interested in learning more about the RAG model, you can read some of the documentation here:
+The goal of this project is to help you get up and running quickly with a build out of a RAG model. Before you dive in, if you're interested in learning more about the RAG model, you can read some of the documentation here:
 
 > - [Hugging Face’s RAG](https://huggingface.co/docs/transformers/model_doc/rag)  documentation provides a detailed explanation of the RAG model and its implementation.
 > - [RAG and generative AI](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview) - Azure AI Search: This page provides an overview of RAG and its application in Azure AI Search.
@@ -10,7 +10,7 @@ The goal of this project is to help you get up an running quickly with a build o
 > - [A Simple Guide To Retrieval Augmented Generation Language Models](https://www.smashingmagazine.com/2024/01/guide-retrieval-augmented-generation-language-models/) includes a diagram showing the generator flow in a RAG-based system.
 > - [Retrieval augmented generation (RAG) explained](https://www.superannotate.com/blog/rag-explained) provides a simple diagram that shows the process of RAG at the intersection of natural language generation (NLG) and information retrieval (IR).
 
-In general, LLM's are costly to train and customize because training requires very large GPU clusters running for extended periods of time. You can follow this in-dept discussion here:  [Efficient LLM Training](https://arxiv.org/pdf/2104.04473.pdf). The problem is made more complicated if the data is constantly changing.
+In general, LLM's are costly to train and customize because training requires very large GPU clusters running for extended periods of time. You can follow this in-depth discussion here:  [Efficient LLM Training](https://arxiv.org/pdf/2104.04473.pdf). The problem is made more complicated if the data is constantly changing.
 
 In addition to solving the training problem customers who implement the RAG model have several other benefits:   
 
@@ -69,13 +69,13 @@ The function app will be used to call the OpenAI service.  Create a new instance
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fd2c9000-aff1-434b-835c-a3f836e272e2" width="500">
 
-#### 4. Creae a new OpenAI instance 
+#### 4. Create a new OpenAI instance
 
 Now for the LLM magic.  Here we'll create an openAI Instance from the portal.  Note, you will need to apply for access  ( and be accepted ) before you can instantiate this.  If you don't have access yet, click on [Apply for access](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/83126828-2798-4e98-8889-a39faafa4470" width="400">
 
-You will receive an email that you have been granted access.  Once you have that, create a new instance using the S0 tier.  We'll be created a GPT-3 instance later once it has been instantiated.
+You will receive an email that you have been granted access.  Once you have that, create a new instance using the S0 tier.  We’ll create a GPT-3 instance in the next step.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/d03ef280-afa1-485e-9833-13f60ada2578" width="500">
 
@@ -96,7 +96,7 @@ Make a note of this deployment name, the endpoint and key. You will need these w
 
 #### 5. Create a new CosmosDB instance
 
-We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it's actually Azure functions that makes it easy to read from comsosDB. [And a storage acct, and event hub, and a queue, etc...] )
+We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a cosmosDB.  The cool thing about cosmosDB is that it makes it super easy to connect to AzureFunctions ( More correctly, it’s actually Azure functions that make it easy to read from CosmosDB. [And a storage acct, and event hub, and a queue, etc...] )
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/214fa10d-5d8c-4d51-875c-f4b808d4e4b4" width="500">
 
@@ -118,8 +118,8 @@ Overall implementing a Retrieval-Augmented Generation (RAG) model involves sever
 
 ### Here are the steps:
 
-Use case: We're going to let AOAI answer some basic questions for us about our team members.  The source data will have 1 sentence for each fact.  We'll run a script to import those into cosmos.
-In order to run the script, we're going to use the cloud shell ( or your own az cli that is already logged in )
+Use case: We’re going to let Azure OpenAI answer some basic questions for us about our team members.  The source data will have 1 sentence for each fact.  We'll run a script to import those into cosmosDB.
+In order to run the script, we're going to use the Cloud Shell ( or your own az cli that is already logged in )
 
 <img width="650" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
 
@@ -166,7 +166,7 @@ Since you will be doing development in this code for your hack, it will be best 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/32fb63a4-d068-49ee-a5ba-81844a56e124" width="300">
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/2eafb8db-7c7f-4ac0-9ca8-aa9a32077818" width="300">
 
-your VS code Explorer section should look like this:
+Your VS Code Explorer section should look like this:
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/252e4c7e-1fc3-4874-a293-de06954ec1fb" width="200">
 
@@ -189,16 +189,16 @@ bin/updateFNConfig.sh
 
 You may have to restart your Azure function, but it should now be up and running.  You are ready to hook it up to the logic app.
 
-# Create your logic app.
+# Create your Logic App.
 
 Overall, the logic app has 3 steps.
-1. It's triggered when a message appears in teams.  In this step we will need to configure the teams connection and grant access to the logic app.
+1. It's triggered when a message appears in Teams.  In this step we will need to configure the teams connection and grant access to the logic app.
 2. Once a message is received, if the Subject is "Question", the Azure function from the previous step will be called with the users question.
 3. The response from the azure function will be uploaded into teams as a reply to the original message.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc311cea-f0e8-41f9-8c37-7b7989b0fbc4" width="400">
 
-In the first step, add a trigger: **When a new channel message is added**.  Select the team that was created in step 1 along with the General channel.  You will be asked to login and allow the logic app to connect on your behalf.  For the question **How often fo you want to check for items?**, select once per minute.
+In the first step, add a trigger: **When a new channel message is added**.  Select the team that was created in step 1 along with the General channel.  You will be asked to login and allow the logic app to connect on your behalf.  For the question **How often do you want to check for items?**, select once per minute.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/9d25e91e-740f-427d-a388-f1bf23d3731d" width="500">
 
