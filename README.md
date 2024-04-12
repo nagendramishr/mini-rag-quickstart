@@ -182,6 +182,15 @@ Edit the contents of src/updateFNConfig.sh
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/73cd59c0-5cec-46ba-9b66-756c83fe4a30)
 
+Note: The `AOAI_KEY` and `AOAI_ENDPOINT` are listed on the Azure Portal:
+
+<img width="323" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a42f03d0-3fb7-4794-9ff7-dec87f218411">
+
+The `MyAccount_COSMOSDB` is actually the value of `$COSMOS_CONNSTR`. You can also grab it from the portal as well:
+
+<img width="287" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/61e0fe88-bcdb-4afa-bf67-c5f8763090e7">
+
+
 Now run the update script to set the values in your Azure Function.
 
 ```
