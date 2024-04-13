@@ -174,9 +174,11 @@ Since you will be doing development in this code for your homework, it will be b
 
 Once installed, clone the repo locally and navigate to the src/azureFunction folder.
 
-Clone the code locally:
+Clone the code locally and source setup.sh:
 ```
 > git clone https://github.com/nagendramishr/mini-rag-quickstart.git
+> cd mini-rag-quickstart
+> source bin/setup.sh
 ```
 
 
@@ -211,7 +213,7 @@ Note: The `AOAI_KEY` and `AOAI_ENDPOINT` are listed on the Azure Portal:
 
 <img width="323" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a42f03d0-3fb7-4794-9ff7-dec87f218411">
 
-The `MyAccount_COSMOSDB` is actually the value of `$COSMOS_CONNSTR`. You can also grab it from the portal as well:
+The `MyAccount_COSMOSDB` variable shuld be defined with the value of `$COSMOS_CONNSTR`. You can also grab it from the portal as well:
 
 <img width="287" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/61e0fe88-bcdb-4afa-bf67-c5f8763090e7">
 
