@@ -10,7 +10,7 @@ The goal of this project is to help you get up and running quickly with a build 
 > - [A Simple Guide To Retrieval Augmented Generation Language Models](https://www.smashingmagazine.com/2024/01/guide-retrieval-augmented-generation-language-models/) includes a diagram showing the generator flow in a RAG-based system.
 > - [Retrieval augmented generation (RAG) explained](https://www.superannotate.com/blog/rag-explained) provides a simple diagram that shows the process of RAG at the intersection of natural language generation (NLG) and information retrieval (IR).
 
-In general, RAG is a way to overcome th need to constantly train and retrain a Large Language Model. Imagine a neural network with 200 billion nodes with each node connected to the others. These LLM's are the engine in generative AI, but they are very to train because they require a lot of computation to build. ( Think large GPU clusters running complex calculations for a long time.) This is so computationally expensive that keeping up with new data or customizing becomes cost prohibitive. You can learn more about it in this in-depth description here:  [Efficient LLM Training](https://arxiv.org/pdf/2104.04473.pdf). .
+In general, RAG is a way to overcome the need to constantly train and retrain a Large Language Model. Imagine a neural network with 200 billion nodes with each node connected to the others. These LLM's are the engine in generative AI, but they are very expensive to train because they require a lot of computation to build. ( Think large GPU clusters running complex calculations for a long time.) This is so computationally expensive that keeping up with new data or customizing becomes cost prohibitive. You can learn more about it in this in-depth description here:  [Efficient LLM Training](https://arxiv.org/pdf/2104.04473.pdf). .
 
 Customers who implement the RAG model can not only solve the training issues, but they also gain the following benefits:   
 
@@ -25,7 +25,7 @@ Customers who implement the RAG model can not only solve the training issues, bu
 
 # Project Overview
 
-This project will allow you to incorporate **Azure OpenAI** into a **Teams Channel**.
+This project will allow you to build RAG by incorporating **Azure OpenAI** and **CosmosDB** into a **Teams Channel**.
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/1ae8c7c6-fc72-485a-85e5-701f696339fb)
 
@@ -43,15 +43,16 @@ This project will allow you to incorporate **Azure OpenAI** into a **Teams Chann
 You will need the following in order to run through this quickstart:
 
 1. An Azure subscription with the ability to create Azure resources: ( Resource Group, Logic App, Azure Function, CosmosDB and Azure OpenAI ).
-2. Access to the the OpenAI offering in Azure. [ You can request access if you do not have it.](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
+2. Access to the OpenAI offering in Azure. [ You can request access if you do not have it.](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
 3. A computer with VS Code installed on it:  [Windows / Mac](https://code.visualstudio.com/download)  -  [wsl](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode).
 4. [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-python#install-the-azure-functions-core-tools) installed on the computer.
+5. Python 3.11 or 3.10. 
 
 ## Building it manually
 ### Create the resources:
 #### 1. Create a new Teams channel
 
-Teams will be used as the chat UI for this project.  To keep things simple, create a new team.  We'll use the general channel in this newly created team.
+Teams will be used as the chat UI for this project.  To keep things simple, create a new team. Once created, we'll use it's general channel for the entry point into RAG.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/3805c120-82af-48da-83aa-500f68f50dec" width="500">
 
@@ -64,7 +65,7 @@ The **Logic App** will be used to shuttle message between the **Teams** chat and
 
 #### 3. Create a new Azure Function
 
-The **Function App** will be used to call the **OpenAI** service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  If you have a different version of python installed locally, choose the version that matches your local system.
+The **Function App** will be used to call the **OpenAI** service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  We'll need to deploy this from you laptop so If you have a different version of python installed locally, choose the version that matches your local system.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fd2c9000-aff1-434b-835c-a3f836e272e2" width="500">
 
