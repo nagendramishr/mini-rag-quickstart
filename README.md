@@ -2,7 +2,7 @@
 
 ## Background
 
-The goal of this project is to help you get up and running quickly with a build out of a RAG model. Before you dive in, if you're interested in learning more about the RAG model, you can read some of the documentation here:
+The goal of this project is to help you get up and running quickly with a build out of a RAG model. You can skip to the actual build out below or if you're interested in learning more about the RAG model, you can read some of the documentation here:
 
 > - [Hugging Face’s RAG](https://huggingface.co/docs/transformers/model_doc/rag)  documentation provides a detailed explanation of the RAG model and its implementation.
 > - [RAG and generative AI](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview) - Azure AI Search: This page provides an overview of RAG and its application in Azure AI Search.
@@ -10,9 +10,9 @@ The goal of this project is to help you get up and running quickly with a build 
 > - [A Simple Guide To Retrieval Augmented Generation Language Models](https://www.smashingmagazine.com/2024/01/guide-retrieval-augmented-generation-language-models/) includes a diagram showing the generator flow in a RAG-based system.
 > - [Retrieval augmented generation (RAG) explained](https://www.superannotate.com/blog/rag-explained) provides a simple diagram that shows the process of RAG at the intersection of natural language generation (NLG) and information retrieval (IR).
 
-In general, LLM's are costly to train and customize because training requires very large GPU clusters running complex calculations for an extended period of time. You can learn more about it in this in-depth description here:  [Efficient LLM Training](https://arxiv.org/pdf/2104.04473.pdf). The problem is made more complicated if the data is constantly changing.
+In general, RAG is a way to overcome th need to constantly train and retrain a LLM.  LLM are the engine in generative AI, but they are very to train because they require a lot of computation to build. ( Think large GPU clusters running complex calculations for a long time.) This is so computationally expensive that keeping up with new data or customizing becomes cost prohibitive. You can learn more about it in this in-depth description here:  [Efficient LLM Training](https://arxiv.org/pdf/2104.04473.pdf). .
 
-Customers who implement the RAG model not only solve the training issues, but they also gain the following benefits:   
+Customers who implement the RAG model can not only solve the training issues, but they also gain the following benefits:   
 
 > - **Access to External Knowledge:** RAG provides LLMs access to external knowledge through documents, resulting in contextually accurate and factual responses.
 > - **Cost-Effective:** RAG is more cost-effective than fine-tuning, as it doesn’t require the labeled data and computational resources that come with model training.
