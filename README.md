@@ -115,7 +115,7 @@ Overall implementing a Retrieval-Augmented Generation (RAG) model involves sever
 > - **Post-Processing:** Post-process the user input and the fetched document(s). The post-processing is done with an LLM.
 > - **Response Generation:** Generate a response based on the user’s query and the retrieved documents.
 
-### Here are the steps:
+### Uploading the data:
 
 In our implementation, we are going to ingest sample data and layer it on top of the general knowledge the LLM already knows about.  We will then use **Azure OpenAI** to answer questions about the combined data.  This repo already has the source data as 1 sentence for each fact but you can tune it if you like.
 
@@ -160,8 +160,9 @@ Your **cosmosDB** instance should now be updated with the contents of the data f
 
 <img width="1117" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/57330179-4f4e-4406-8a59-2b8787230059">
 
+### Deploying the Azure Function:
 
-#### Upload the sample Azure Functions code to your instance.
+#### Get your local environment ready
 
 The source code for an Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to **Azure** and then configured with the endpoints for **CosmosDB** and **OpenAI**.  
 
@@ -183,7 +184,10 @@ Open up **VS Code** to the ``src/azureFunctions`` folder that you cloned locally
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/252e4c7e-1fc3-4874-a293-de06954ec1fb" width="200">
 
-Deploy your code.  If you want to know more about deploying from VS code you can watch [this video](https://www.youtube.com/watch?v=-W2utG3CCrs&t=3s&ab_channel=AzureAppModernization).
+
+#### Deploying the code
+
+Deploy your code is built into VSCode.  If you want to know more about deploying from VS code you can watch [this video](https://www.youtube.com/watch?v=-W2utG3CCrs&t=3s&ab_channel=AzureAppModernization).
 
 1. Type `Ctrl-Shift-P`  and select **Azure Functions: Deploy to Function App...**.
 2. Select your subscription
@@ -193,6 +197,7 @@ Deploy your code.  If you want to know more about deploying from VS code you can
 
 <img width="1013" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/710ce730-091d-46aa-9b72-426acc821b0c">
 
+#### Configure the Azure Function
 
 Now that your function code has been deployed, you next need to configure it so that it knows about your **CosmosDB** and **OpenAI** endpoints.
 
@@ -217,7 +222,7 @@ bin/updateFNConfig.sh
 
 You may have to restart your Azure function, but it should now be up and running.  You are ready to connect it to the **Logic App**.
 
-# Create your Logic App.
+### Create your Logic App.
 
 Overall, the logic app has 3 steps.
 1. It gets triggered when a message appears in Teams.  In this step we will need to configure the teams connection and grant access to the **Logic App**.
@@ -247,9 +252,9 @@ After the HTTP step, add another action: **Reply with a message in channel**.  H
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/eecff9c7-e25d-4c34-b287-3a7c95c07e03" width="500">
 
 
-# TESTING TO SEE IT IN ACTION:
+# Testing the RAG Model:
 
-Now, you can post a message in the teams channel and after a few minutes, you will see a response.
+Now that the data has been upload and your **Azure** services configured, you can test the solution by posting a message in the teams channel and after a few minutes, you will see a response.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/e12e0d46-cde9-4aec-9866-e31785b781b4" width="600">
 
