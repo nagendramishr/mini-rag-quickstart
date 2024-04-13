@@ -25,7 +25,7 @@ Customers who implement the RAG model can not only solve the training issues, bu
 
 # Project Overview
 
-This project will allow you to build RAG by incorporating **Azure OpenAI** and **CosmosDB** into a **Teams Channel**.
+This project will allow you to build a RAG implementation by incorporating **Azure OpenAI** and **CosmosDB** into a **Teams Channel**.  In this implementation, you will be able to ask questions about sample data uploaded into the database via a **Teams** chat.
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/1ae8c7c6-fc72-485a-85e5-701f696339fb)
 
