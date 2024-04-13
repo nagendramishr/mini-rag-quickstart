@@ -197,6 +197,8 @@ Deploy your code is built into VSCode.  If you want to know more about deploying
 
 <img width="1013" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/710ce730-091d-46aa-9b72-426acc821b0c">
 
+If you do not see the function `AskQuestion`, than the deployment did not succeed ( or it is still uploading ).  
+
 #### Configure the Azure Function
 
 Now that your function code has been deployed, you next need to configure it so that it knows about your **CosmosDB** and **OpenAI** endpoints.
