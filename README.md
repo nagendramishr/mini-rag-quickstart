@@ -65,7 +65,7 @@ The **Logic App** will be used to shuttle message between the **Teams** chat and
 
 #### 3. Create a new Azure Function
 
-The **Function App** will be used to call the **OpenAI** service.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  We'll need to deploy this from you laptop so If you have a different version of python installed locally, choose the version that matches your local system.
+The **Azure Function** app will be used to call the **OpenAI** service and is we will implement the RAG model.  Create a new instance in the portal using Python 3.11 on Linux using the serverless option.  We'll need to deploy this from you laptop so If you have a different version of python installed locally, choose the version that matches your local system.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fd2c9000-aff1-434b-835c-a3f836e272e2" width="500">
 
@@ -90,13 +90,12 @@ This will ask you to confirm that you're navigating to **Azure OpenAI Studio**. 
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/58cc84a8-8fb4-490a-930b-5ceef29d1576" width="400">
 
-Your deployment name in this case, its called **gpt35**.
+Make a note of this deployment name, the endpoint and key. You will need these when you configure your **Azure Function** settings.  In the example above, the deployment name is called **gpt35**.
 
-Make a note of this deployment name, the endpoint and key. You will need these when you configure your **Azure Function** settings.  
 
 #### 5. Create a new CosmosDB instance
 
-We'll need some place to keep the data that will be used to generate the response.  We're going to keep it simple and store this information in a **CosmosDB**.  The cool thing about **CosmosDB** is that it makes it super easy to connect to **Azure Functions** ( More correctly, it’s actually **Azure Functions** that make it easy to read from **CosmosDB**. [And a storage acct, and event hub, and a queue, etc...] )
+Now we'll need a place to keep the data that will be used to generate the enhanced prompt.  We're going to store this information in **CosmosDB**.  The cool thing about **CosmosDB** is that it very easy to connect to **Azure Functions**.  **Azure Functions** has a lot of different bindings including **SQL** but it's slightly less complex to read from **CosmosDB**.  ( You can watch [this video](https://www.youtube.com/watch?v=4d71whuKqNM&t=8s&ab_channel=AzureAppModernization) for more details on connecting CosmosDB. )
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/214fa10d-5d8c-4d51-875c-f4b808d4e4b4" width="500">
 
@@ -104,7 +103,7 @@ We'll need some place to keep the data that will be used to generate the respons
 
 ## Stitching it all together
 
-Overall implementing a Retrieval-Augmented Generation (RAG) model involves several steps.  But it'll take longer to read through these than to do the actual mini-RAG implementation.
+Overall implementing a Retrieval-Augmented Generation (RAG) model involves several steps.  They are detailed below.  In our implementation, we're doing all the steps except for the: Embedding and Vector Database steps.  After you finish implementation, try to identify where each of these steps are performed.
 
 > - **Define Use Case:** Start by defining the specific use case for your RAG implementation. Determine the domain or topic for which you want the Large Language Model (LLM) to generate responses augmented by retrieved information.
 > - **Select an LLM:** Choose a suitable Large Language Model for your RAG implementation.
@@ -118,8 +117,9 @@ Overall implementing a Retrieval-Augmented Generation (RAG) model involves sever
 
 ### Here are the steps:
 
-Use case: We’re going to let **Azure OpenAI** answer some basic questions for us about our team members.  The source data will have 1 sentence for each fact.  We'll run a script to import those into **CosmosDB**.
-In order to run the script, we're going to use the Cloud Shell ( or your own az cli that is already logged in )
+In our implementation, we are going to ingest sample data and layer it on top of the general knowledge the LLM already knows about.  We will then use **Azure OpenAI** to answer questions about the combined data.  This repo already has the source data as 1 sentence for each fact but you can tune it if you like.
+
+In order to ingest the sample data, we're going to use the Cloud Shell ( or your own az cli that is already logged in )
 
 <img width="650" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/b138de44-5a73-442e-9c95-dca6b7890e12">
 
@@ -142,7 +142,7 @@ export COSMOS_DB=aoaidb
 
 #### Modify any facts from data/cosmosdb-facts.txt
 
-The facts in this file were generated via the prompt generator as a test for this exercise.  You can modify these for your own purpose.
+As stated earlier, the sample facts are stored in this file: `data/cosmosdb-facts.txt`. They were generated via the prompt generator as a test for this exercise.  You can modify the prompt and generate your own facts or add additional lines to the data.  The prompt is contained in `data/datagen_prompt.txt` and you can simply cut and paste it into bing chat to generate a new response set.
 
 ### Run the setup scripts and upload the facts into the DB
 
@@ -156,23 +156,27 @@ bin/insertCosmos.py
 
 ```
 
-You should now have a **cosmosDB** with a noSQL db in it containing the facts from the facts file.
+Your **cosmosDB** instance should now be updated with the contents of the data file.  You can use the data explorer to validate or update the facts in the **Azure Portal**.
+
+<img width="1117" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/57330179-4f4e-4406-8a59-2b8787230059">
+
 
 #### Upload the sample Azure Functions code to your instance.
 
-The source code for an Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to Azure and then configured with the endpoints for **CosmosDB** and **OpenAI**.  
+The source code for an Azure Function has already been created for you in `src/azureFunction`.  This code needs to be deployed to **Azure** and then configured with the endpoints for **CosmosDB** and **OpenAI**.  
 
-Since you will be doing development in this code for your hack, it will be best to open it up in VS Code locally on your local machine. Make sure to clone the repo locally as well.  You will need to install python and the [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-python#install-the-azure-functions-core-tools) as well.  Navigate to the src/azureFunction folder.  
+Since you will be doing development in this code for your homework, it will be best to open it up in VS Code locally on your local machine.  For this part, you will need to install Python and the [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-python#install-the-azure-functions-core-tools)    You will also need the following VSCode extensions installed:
+
+<img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/32fb63a4-d068-49ee-a5ba-81844a56e124" width="350">
+<img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/2eafb8db-7c7f-4ac0-9ca8-aa9a32077818" width="350">
+
+
+Once installed, clone the repo locally and navigate to the src/azureFunction folder.
 
 Clone the code locally:
 ```
 > git clone https://github.com/nagendramishr/mini-rag-quickstart.git
 ```
-
-Make sure that you have the following extensions installed:
-
-<img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/32fb63a4-d068-49ee-a5ba-81844a56e124" width="350">
-<img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/2eafb8db-7c7f-4ac0-9ca8-aa9a32077818" width="350">
 
 
 Open up **VS Code** to the ``src/azureFunctions`` folder that you cloned locally.  Your **VS Code Explorer** section should look like this:
@@ -180,12 +184,17 @@ Open up **VS Code** to the ``src/azureFunctions`` folder that you cloned locally
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/252e4c7e-1fc3-4874-a293-de06954ec1fb" width="200">
 
 Deploy your code.  If you want to know more about deploying from VS code you can watch [this video](https://www.youtube.com/watch?v=-W2utG3CCrs&t=3s&ab_channel=AzureAppModernization).
+
 1. Type `Ctrl-Shift-P`  and select **Azure Functions: Deploy to Function App...**.
 2. Select your subscription
 3. Select your function app
 4. Confirm that you want to deploy the function
+5. Verify that the code was deployed by looking for the function in the **Azure Portal**
 
-Now that your function code has been deployed, you next need to set up the configuration for the following variables.
+<img width="1013" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/710ce730-091d-46aa-9b72-426acc821b0c">
+
+
+Now that your function code has been deployed, you next need to configure it so that it knows about your **CosmosDB** and **OpenAI** endpoints.
 
 Edit the contents of src/updateFNConfig.sh
 
@@ -200,7 +209,7 @@ The `MyAccount_COSMOSDB` is actually the value of `$COSMOS_CONNSTR`. You can als
 <img width="287" alt="image" src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/61e0fe88-bcdb-4afa-bf67-c5f8763090e7">
 
 
-Now run the update script to set the values in your Azure Function.
+Now run the update script to configure the values in your Azure Function.
 
 ```
 bin/updateFNConfig.sh
@@ -211,9 +220,9 @@ You may have to restart your Azure function, but it should now be up and running
 # Create your Logic App.
 
 Overall, the logic app has 3 steps.
-1. It's triggered when a message appears in Teams.  In this step we will need to configure the teams connection and grant access to the **Logic App**.
+1. It gets triggered when a message appears in Teams.  In this step we will need to configure the teams connection and grant access to the **Logic App**.
 2. Once a message is received, if the Subject is "Question", the Azure function from the previous step will be called with the users question.
-3. The response from the azure function will be uploaded into teams as a reply to the original message.
+3. The response from the **Azure Function** will be uploaded into **Teams** as a reply to the original message.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc311cea-f0e8-41f9-8c37-7b7989b0fbc4" width="400">
 
