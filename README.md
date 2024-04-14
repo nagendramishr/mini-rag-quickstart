@@ -186,7 +186,7 @@ Deploy your code.  If you want to know more about deploying from VS code you can
 
 Now that your function code has been deployed, you next need to set up the configuration for the following variables.
 
-Edit the contents of src/updateFNConfig.sh
+Edit the contents of bin/updateFNConfig.sh
 
 ![image](https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/73cd59c0-5cec-46ba-9b66-756c83fe4a30)
 
