@@ -137,7 +137,7 @@ Edit the first three variables of bin/setup.sh as shown below with the correct v
 
 export RG=aoai-rag 
 export COSMOS_ACCT=nvmopenaicosmosdb 
-export COSMOS_DB=aoaidb
+export AOAI_APP=nvmaoai-teams
 ```
 
 #### Modify any facts from data/cosmosdb-facts.txt
