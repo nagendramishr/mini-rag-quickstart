@@ -172,24 +172,22 @@ Since you will be doing development in this code for your homework, it will be b
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/2eafb8db-7c7f-4ac0-9ca8-aa9a32077818" width="350">
 
 
-Once installed, clone the repo locally and navigate to the src/azureFunction folder.
+Once installed, we'll be making edits to the code on your local machine.  Clone the code locally and source setup.sh:
 
-Clone the code locally and source setup.sh:
 ```
 > git clone https://github.com/nagendramishr/mini-rag-quickstart.git
 > cd mini-rag-quickstart
 > source bin/setup.sh
 ```
 
-
-Open up **VS Code** to the ``src/azureFunctions`` folder that you cloned locally.  Your **VS Code Explorer** section should look like this:
+Now open up **VS Code** to the ``src/azureFunctions`` folder that you cloned locally.  Your **VS Code Explorer** section should look like this:
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/252e4c7e-1fc3-4874-a293-de06954ec1fb" width="200">
 
 
 #### Deploying the code
 
-Deploy your code is built into VSCode.  If you want to know more about deploying from VS code you can watch [this video](https://www.youtube.com/watch?v=-W2utG3CCrs&t=3s&ab_channel=AzureAppModernization).
+The ability to deploy your code to Azure was added to your VSCode via the extensions above. If you want to know more about deploying from VS code you can watch [this video](https://www.youtube.com/watch?v=-W2utG3CCrs&t=3s&ab_channel=AzureAppModernization).
 
 1. Type `Ctrl-Shift-P`  and select **Azure Functions: Deploy to Function App...**.
 2. Select your subscription
