@@ -52,7 +52,7 @@ You will need the following in order to run through this quickstart:
 ### Create the resources:
 #### 1. Create a new Teams channel
 
-Teams will be used as the chat UI for this project.  To keep things simple, create a new team. Once created, we'll use it's general channel for the entry point into RAG.
+Teams will be used as the chat UI for this project.  To keep things simple, create a new team. Once created, we'll use its general channel for the entry point into RAG.
 
 <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/3805c120-82af-48da-83aa-500f68f50dec" width="500">
 
@@ -227,8 +227,8 @@ You may have to restart your Azure function, but it should now be up and running
 ### Create your Logic App.
 
 Overall, the logic app has 3 steps.
-1. It gets triggered when a message appears in Teams.  In this step we will need to configure the teams connection and grant access to the **Logic App**.
-2. Once a message is received, if the Subject is "Question", the Azure function from the previous step will be called with the users question.
+1. It gets triggered when a message appears in Teams.  In this step we will need to configure the Teams connection and grant access to the **Logic App**.
+2. Once a message is received, if the Subject is "Question", the Azure function from the previous step will be called with the user's question.
 3. The response from the **Azure Function** will be uploaded into **Teams** as a reply to the original message.
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc311cea-f0e8-41f9-8c37-7b7989b0fbc4" width="400">
@@ -241,7 +241,7 @@ Add **Condition** as the next action and require that the Message Subject is equ
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/a6b2e6a9-87e1-4ce6-ba22-1c20880f312a" width="500">
 
-On the **True** side of the condition, add an **HTTP** action.  This action will call the **Azure Function** with a question whose value is the **message body content** that was posted on teams.  For the URL, enter the URL for your **Azure Function**.
+On the **True** side of the condition, add an **HTTP** action.  This action will call the **Azure Function** with a question whose value is the **message body content** that was posted on Teams.  For the URL, enter the URL for your **Azure Function** (make sure the question mark "?" is included at the end of the URL).
 
    <img src="https://github.com/nagendramishr/mini-rag-quickstart/assets/81572024/fc84af51-b7fe-40aa-ade6-91d46d3fac72" width="500">
 
